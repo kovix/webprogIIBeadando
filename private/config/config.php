@@ -32,7 +32,7 @@ const THEME_MENU = [
     ],
     [
         "TITLE" => "Új rekord",
-        "URL" => "/index.php?P=create",
+        "URL" => "/index.php?P=createUpdate",
         "OUTER_CLASSES" => [
             "nav-item",
         ],

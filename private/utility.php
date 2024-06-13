@@ -65,6 +65,29 @@ class Utility {
         return true;
     }
 
+    public function update_data($index, $newData) {
+        $data = $this->getData();
+        if(!array_key_exists($index, $data)) {
+            return false;
+        }
+
+        $data[$index] = $newData;
+
+        $this->save_data($data);
+
+        return true;
+
+    }
+
+    public function get_one($index) {
+        $data = $this->getData();
+        if(!array_key_exists($index, $data)) {
+            return false;
+        }
+
+        return $data[$index];
+    }
+
     public function get_template_part($name) {
         $path = PRIVATE_DIR . "templates/parts/" . $name . ".html";
 

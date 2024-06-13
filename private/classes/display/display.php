@@ -33,7 +33,7 @@ class display {
             }
             $body .= "
                     <td>
-                        <a href=\"#\" class=\"text-primary me-2\">Szerk.</a>
+                        <a href=\"index.php?P=createUpdate&idx={$key}\" class=\"text-primary me-2\">Szerk.</a>
                         <a href=\"index.php?P=delete&idx={$key}\" onclick=\"return confirm('Biztosan törölni szeretné ezt az elemet?');\" class=\"text-danger\">Del.</a>
                     </td>
                 </tr>
