@@ -71,6 +71,4 @@ const THEME_MENU = [
 
 ];
 
-//                    <li class="nav-item">
-//                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-//                    </li>
+const APP_NAMESPACE = "ADEJ1R";
