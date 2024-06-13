@@ -73,4 +73,47 @@ const THEME_MENU = [
 
 ];
 
+const MUFAJOK = [
+    [
+        "value" => "tragédia",
+        "label" => "Tragédia",
+    ],
+    [
+        "value" => "komédia",
+        "label" => "Komédia",
+    ],
+    [
+        "value" => "dráma",
+        "label" => "Dráma",
+    ],
+    [
+        "value" => "musical",
+        "label" => "Musical",
+    ],
+    [
+        "value" => "opera",
+        "label" => "Opera",
+    ],
+];
+
+const SZINPADOK = [
+    [
+        "value" => "nagyszínpad",
+        "label" => "Nagyszínpad",
+    ],
+    [
+        "value" => "kamaraszínpad",
+        "label" => "Kamaraszínpad",
+    ],
+];
+
+const LABELS = [
+    "iro" => "színdarab írója",
+    "szindarab" => "színdarab címe",
+    "rendezo" => "színdarab rendezője",
+    "mufaj" => "műfaj",
+    "szinpad" => "színpad",
+];
+
+
 const APP_NAMESPACE = "ADEJ1R";

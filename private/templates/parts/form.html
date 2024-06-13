@@ -1,0 +1,40 @@
+<form method="POST" action="[[action]]">
+    <input type="hidden" name="P" value="[[page]]">
+    <input type="hidden" name="action" value="save">
+
+    <!-- Író -->
+    <div class="mb-3">
+        <label for="iro" class="form-label">Író</label>
+        <input type="text" class="form-control" id="iro" name="iro" value="[[iro]]" ><!-- A required beállítható lenne, de akkor nem igazán futna a php validáció -->
+    </div>
+
+    <!-- Színdarab -->
+    <div class="mb-3">
+        <label for="szindarab" class="form-label">Színdarab</label>
+        <input type="text" class="form-control" id="szindarab" name="szindarab" value="[[szindarab]]" >
+    </div>
+
+    <!-- Rendező -->
+    <div class="mb-3">
+        <label for="rendezo" class="form-label">Rendező</label>
+        <input type="text" class="form-control" id="rendezo" name="rendezo" value="[[rendezo]]" >
+    </div>
+
+    <!-- Műfaj -->
+    <div class="mb-3">
+        <label for="mufaj" class="form-label">Műfaj</label>
+        <select class="form-select" id="mufaj" name="mufaj" >
+            [[mufaj]]
+        </select>
+    </div>
+
+    <!-- Színpad -->
+    <div class="mb-3">
+        <label for="szinpad" class="form-label">Színpad</label>
+        <select class="form-select" id="szinpad" name="szinpad" >
+            [[szinpad]]
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Beküldés</button>
+</form>
