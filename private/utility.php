@@ -16,7 +16,7 @@ class Utility {
     private function __clone() {
     }
 
-    private function __wakeup() {
+    public function __wakeup() {
     }
 
     /**
@@ -24,6 +24,18 @@ class Utility {
      */
     public function getData()
     {
+        if (!file_exists(DATA_FILE)) {
+            return [];
+        }
+
+        $fileContent = file_get_contents(DATA_FILE);
+        $data = json_decode($fileContent, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            die("Az adatfájl nem olvasható be, valószínűleg megsérült. Ellenőrizze a fájl helyességét, vagy törölje");
+        }
+
+        return $data;
 
     }
 }

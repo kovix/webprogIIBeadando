@@ -7,14 +7,17 @@ define("PUBLIC_DIR", ROOT_DIR . "/public/");
 
 require_once PRIVATE_DIR . 'config/config.php';
 
+//get Utility
+require_once PRIVATE_DIR . '/utility.php';
+
 
 //P(age) változó vizsgálata
 $P = "display";
 
 if (filter_has_var(INPUT_GET, 'P')) {
-    $P = filter_input(INPUT_GET, 'P', FILTER_SANITIZE_STRING);
+    $P = filter_input(INPUT_GET, 'P', FILTER_SANITIZE_SPECIAL_CHARS); //FILTER_SANITIZE_STRING deprecated
 } elseif (filter_has_var(INPUT_POST, 'P')) {
-    $P = filter_input(INPUT_POST, 'P', FILTER_SANITIZE_STRING);
+    $P = filter_input(INPUT_POST, 'P', FILTER_SANITIZE_SPECIAL_CHARS);
 }
 
 $file = PRIVATE_DIR . '/classes/' . $P . '/' . $P . '.php';

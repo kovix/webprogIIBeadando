@@ -2,6 +2,8 @@
 
 const BASE_URL = "https://webprog2-beadando/";
 
+const DATA_FILE = PRIVATE_DIR . "data/data.json";
+
 const THEME_LANG = "HU";
 const THEME_CHARSET = "utf-8";
 const THEME_DESCRIPTION = "Kovács Dániel ADEJ1R beadandó munka";
@@ -18,8 +20,8 @@ const THEME_JS = [
 
 const THEME_MENU = [
     [
-        "TITLE" => "Projekt",
-        "URL" => "#",
+        "TITLE" => "Megjelenítés",
+        "URL" => "/index.php",
         "OUTER_CLASSES" => [
             "nav-item",
         ],
@@ -29,8 +31,8 @@ const THEME_MENU = [
         ]
     ],
     [
-        "TITLE" => "Menü1",
-        "URL" => "#",
+        "TITLE" => "Új rekord",
+        "URL" => "/index.php?P=create",
         "OUTER_CLASSES" => [
             "nav-item",
         ],

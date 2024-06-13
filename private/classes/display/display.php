@@ -3,13 +3,17 @@
 namespace ADEJ1R;
 
 class display {
-    public  function  __construct() {
 
+    private $utility;
+    private $data;
+    public  function  __construct() {
+        $fullClassName = APP_NAMESPACE . "\\Utility";
+        $this->utility = $fullClassName::getInstance();
+        $this->data  = $this->utility->getData();
     }
 
     public function  run()
     {
-        return "aaa";
     }
 
 }
