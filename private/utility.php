@@ -52,6 +52,18 @@ class Utility {
         $this->save_data($data);
     }
 
+    public function delete_data($index) {
+        $data = $this->getData();
+
+        if (!array_key_exists($index, $data)) {
+            return false;
+        }
+
+        unset($data[$index]);
+        $this->save_data($data);
+
+        return true;
+    }
 
     public function get_template_part($name) {
         $path = PRIVATE_DIR . "templates/parts/" . $name . ".html";
