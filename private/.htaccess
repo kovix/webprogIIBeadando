@@ -1,0 +1,3 @@
+# .htaccess fájl a privát mappában
+Order Deny,Allow
+Deny from all
