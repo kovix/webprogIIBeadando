@@ -37,7 +37,7 @@ Az egyszerűsége és a rendkívüli hasonlósága miatt a CREATE és UPDATE met
 
 A restapi a /api.php végpontról indítható.
 A használatához szükséges MySQL vagy MariaDB adatbáziskapcsolat kiépítése, a kapcsolódáshoz szükséges adatokat a config/config.php állományban értelemszerűen ki kell tölteni.
-Az adatbázisba importálni kell a priate/dump/sql.php állományt, ami egyetlen táblát hoz létre.
+Az adatbázisba importálni kell a private/dump/sql.php állományt, ami egyetlen táblát hoz létre.
 
 
 Az api endpointot egy konstans Bearer token védi, az endpointok eléréséhez
