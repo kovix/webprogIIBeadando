@@ -1,9 +1,8 @@
 <?php
 
+const APP_NAMESPACE = "ADEJ1R";
 const BASE_URL = "https://webprog2-beadando/";
-
 const DATA_FILE = PRIVATE_DIR . "data/data.json";
-
 const THEME_LANG = "HU";
 const THEME_CHARSET = "utf-8";
 const THEME_DESCRIPTION = "Kovács Dániel ADEJ1R beadandó munka";
@@ -17,6 +16,12 @@ const THEME_CSS = [
 const THEME_JS = [
     BASE_URL . "public/assets/bootstrap/js/bootstrap.bundle.js",
 ];
+
+const DB_HOST = '127.0.0.1';
+const DB_NAME  = 'webprog2beadando';
+const DB_USER = 'user';
+const DB_PASS = 'pass';
+const DB_CHARSET = 'utf8mb4';
 
 const THEME_MENU = [
     [
@@ -40,36 +45,7 @@ const THEME_MENU = [
             "nav-link"
         ]
     ],
-    [
-        "TITLE" => "Menü1",
-        "URL" => "#",
-        "OUTER_CLASSES" => [
-            "nav-item",
-        ],
-        "INNER_CLASSES" => [
-            "nav-link"
-        ]
-    ],
-    [
-        "TITLE" => "Menü1",
-        "URL" => "#",
-        "OUTER_CLASSES" => [
-            "nav-item",
-        ],
-        "INNER_CLASSES" => [
-            "nav-link"
-        ]
-    ],
-    [
-        "TITLE" => "Menü1",
-        "URL" => "#",
-        "OUTER_CLASSES" => [
-            "nav-item",
-        ],
-        "INNER_CLASSES" => [
-            "nav-link"
-        ]
-    ],
+
 
 ];
 
@@ -115,5 +91,10 @@ const LABELS = [
     "szinpad" => "színpad",
 ];
 
-
-const APP_NAMESPACE = "ADEJ1R";
+const REQUIRED_KEYS = [
+    "iro",
+    "szindarab",
+    "rendezo",
+    "mufaj",
+    "szinpad",
+];

@@ -35,7 +35,6 @@ class createUpdate {
         }
 
         $this->getPost();
-        //$this->data  = $this->utility->getData();
     }
 
     public function run()
@@ -50,7 +49,7 @@ class createUpdate {
         $saveSuccess = false;
 
         if ($this->inSave) {
-            $errors = $this->validate_input();
+            $errors = $this->utility->validate_input($this->currentData);
             if ($errors) {
                 $content .= $errors;
             } else {
@@ -80,17 +79,6 @@ class createUpdate {
         }
 
         return $content;
-    }
-
-    private function validate_input() {
-        //Minden mező kötelező
-        $errors = "";
-        foreach ($this->currentData as $key => $value) {
-            if (empty($value)) {
-                $errors .= $this->utility->gen_alert("danger", "A(z) " . LABELS[$key] . " mező kitöltése kötelező!");
-            }
-        }
-        return $errors;
     }
 
     private function getPost() {

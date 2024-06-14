@@ -88,6 +88,17 @@ class Utility {
         return $data[$index];
     }
 
+    public function validate_input($currentData) {
+        //Minden mező kötelező
+        $errors = "";
+        foreach (REQUIRED_KEYS as $key) {
+            if (!array_key_exists($key, $currentData) || empty($currentData[$key])) {
+                $errors .= $this->gen_alert("danger", "A(z) " . LABELS[$key] . " mező kitöltése kötelező!");
+            }
+        }
+        return $errors;
+    }
+
     public function get_template_part($name) {
         $path = PRIVATE_DIR . "templates/parts/" . $name . ".html";
 
