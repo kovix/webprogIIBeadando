@@ -14,7 +14,7 @@ class Database {
 
         try {
             $this->pdo = new \PDO($dsn, DB_USER, DB_PASS);
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             $this->error = $e->getMessage();
             die("Adatbázis kapcsolódási hiba: " . $this->error);
         }
@@ -33,7 +33,7 @@ class Database {
             } else {
                 return [];
             }
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return [
                 "message" => ['message' => "Adatbázis hiba: " . $e->getMessage()],
                 "status" => 500,
@@ -55,7 +55,7 @@ class Database {
                 return null;
             }
 
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return [
                 "message" => ['message' => "Adatbázis hiba: " . $e->getMessage()],
                 "status" => 500,
@@ -72,7 +72,7 @@ class Database {
             $stmt = $this->pdo->prepare("INSERT INTO {$this->table} ({$columns}) VALUES ({$placeholders})");
             $stmt->execute(array_values($data));
             return $this->getSingleRecord($this->pdo->lastInsertId());
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return [
                 "message" => ['message' => "Adatbázis hiba: " . $e->getMessage()],
                 "status" => 500,
@@ -105,7 +105,7 @@ class Database {
                 ];
             }
             return [];
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return [
                 "message" => ['message' => "Adatbázis hiba: " . $e->getMessage()],
                 "status" => 500,
@@ -118,7 +118,7 @@ class Database {
             $stmt = $this->pdo->prepare("SELECT 1 FROM {$this->table} WHERE id = ?");
             $stmt->execute([$id]);
             return $stmt->fetchColumn() !== false;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return [
                 "message" => ['message' => "Adatbázis hiba: " . $e->getMessage()],
                 "status" => 500,
@@ -141,7 +141,7 @@ class Database {
                     "status" => 200,
                 ];
             }
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return [
                 "message" => ['message' => "Adatbázis hiba: " . $e->getMessage()],
                 "status" => 500,
