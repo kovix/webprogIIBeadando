@@ -36,6 +36,10 @@ function sendData($data, $defaultStatus = 200) {
     }
 }
 
+if (!isAuthenticated()) {
+    sendJSON(['message' => 'Unauthorized'], 401);
+}
+
 $method = $_SERVER['REQUEST_METHOD'];
 $path_info = array_key_exists('PATH_INFO', $_SERVER) ? $_SERVER['PATH_INFO'] : '';
 if ($path_info) {
@@ -151,4 +155,16 @@ function api_deleteRecord($id) {
     } else {
         sendJSON(['message' => 'ID szükséges a törléshez'], 400);
     }
+}
+
+function isAuthenticated() {
+    $headers = getallheaders();
+    if (isset($headers['Authorization'])) {
+        $authHeader = $headers['Authorization'];
+        if (preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {
+            $token = $matches[1];
+            return $token === BEARER_TOKEN;
+        }
+    }
+    return false;
 }

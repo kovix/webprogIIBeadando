@@ -23,6 +23,8 @@ const DB_USER = 'user';
 const DB_PASS = 'pass';
 const DB_CHARSET = 'utf8mb4';
 
+const BEARER_TOKEN = "ekkeik";
+
 const THEME_MENU = [
     [
         "TITLE" => "Megjelenítés",
